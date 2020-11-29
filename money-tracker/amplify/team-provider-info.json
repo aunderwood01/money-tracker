@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-moneytracker-dev-224015-authRole",
+            "UnauthRoleArn": "arn:aws:iam::028528026507:role/amplify-moneytracker-dev-224015-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::028528026507:role/amplify-moneytracker-dev-224015-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-moneytracker-dev-224015-deployment",
+            "UnauthRoleName": "amplify-moneytracker-dev-224015-unauthRole",
+            "StackName": "amplify-moneytracker-dev-224015",
+            "StackId": "arn:aws:cloudformation:us-east-1:028528026507:stack/amplify-moneytracker-dev-224015/9b316920-31f4-11eb-97e8-0e2697a4acd1",
+            "AmplifyAppId": "d3w4brv6ixkum8"
+        },
+        "categories": {
+            "auth": {
+                "moneytrackerced81c66": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d3w4brv6ixkum8",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}
