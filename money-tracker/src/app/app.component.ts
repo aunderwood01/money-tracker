@@ -36,6 +36,7 @@ export class AppComponent {
 
   constructor(private ref: ChangeDetectorRef) {
     this.formFields = [
+      { type: "username"},
       { type: "email" },
       { type: "password" },
     ]
@@ -77,8 +78,8 @@ export class AppComponent {
   public async updateData() {
     google.charts.load('current', {'packages':['corechart']});
 
-
-    const allExpenses = (await API.graphql({query: queries.listExpenses, variables: {user: this.user.username}})) as { data: GetExpensesQuery};
+    // Gets all expenses then filters based on current user
+    const allExpenses = (await API.graphql({query: queries.listExpenses, variables: {filter: {user: {eq: this.user.username}}}})) as { data: GetExpensesQuery};
 
     google.charts.setOnLoadCallback(function () {
       let data = new google.visualization.DataTable();
@@ -104,8 +105,7 @@ export class AppComponent {
       let options = {
         showRowNumber: false,
         title: 'Total Expenses',
-        allowHtml: true,
-        width: '33%',
+        width: '66%',
         height: '33%',
       };
 
@@ -120,7 +120,7 @@ export class AppComponent {
   public async updateChart() {
     google.charts.load('current', {'packages':['table']});
 
-    const allExpenses = (await API.graphql({query: queries.listExpenses, variables: {user: this.user.username}})) as { data: GetExpensesQuery};
+    const allExpenses = (await API.graphql({query: queries.listExpenses, variables: {filter: {user: {eq: this.user.username}}}})) as { data: GetExpensesQuery};
     let billsTotal = 0.00;
     let groceriesTotal = 0.00;
     let fastFoodTotal = 0.00;

@@ -13,7 +13,7 @@
     <div class="nav-centered">
       <strong>{{user.username}}'s Expenses</strong>
     </div>
-    <a href="mailto:agugold3@gmail.com?subject = MoneyTracker Issue">Report an Issue</a>
+    <a href="mailto:agugold3@gmail.com?subject=MoneyTracker Issue">Report an Issue</a>
     <div class="nav-right">
       <button class="btn btn-primary btn-sign-out" (click)="signOut()">Sign Out <i class="ion-log-in" data-pack="default" data-tags="sign in"></i></button>
     </div>
@@ -42,7 +42,4 @@
   <!-- Pie Chart visualization -->
   <div class="pie-chart" id="pieChart" [ngClass]="updateChart()"></div>
 
-  <div class="test">
-    <button class="btn btn-primary" (click)="updateData()">Update Data</button>
-  </div>
 </div>

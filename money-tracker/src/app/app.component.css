@@ -49,15 +49,15 @@
 /* Styles for the list of expenses table */
 .expenses-list {
   position: relative;
-  top: 15%;
+  top: -5px;
   left: 33%;
 }
 
 /* Styles for the pie chart */
 .pie-chart {
   position: relative;
-  left: 66%;
-  top: 5%;
+  left: 50%;
+  top: 0;
   width: 500px;
   height: 500px;
 }
