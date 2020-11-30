@@ -5,9 +5,10 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import Amplify, { API, graphqlOperation } from "aws-amplify";
 import awsconfig from "../aws-exports";
 import { AppComponent } from './app.component';
-import {RouterModule} from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
+import { GoogleChartsModule } from "angular-google-charts"
 
 Amplify.configure(awsconfig);
 
@@ -20,7 +21,8 @@ Amplify.configure(awsconfig);
     AmplifyUIAngularModule,
     RouterModule.forRoot([]),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

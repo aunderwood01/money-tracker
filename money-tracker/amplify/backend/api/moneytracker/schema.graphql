@@ -1,9 +1,6 @@
-#scalar Date
-
 type Expense @model {
   id: ID!
   user: String!
   type: String!
-  amount: Int!
-  #date: Date
+  amount: Float!
 }

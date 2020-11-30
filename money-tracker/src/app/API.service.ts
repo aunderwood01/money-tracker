@@ -12,7 +12,7 @@ export type CreateExpenseInput = {
 export type ModelExpenseConditionInput = {
   user?: ModelStringInput | null,
   type?: ModelStringInput | null,
-  amount?: ModelIntInput | null,
+  amount?: ModelFloatInput | null,
   and?: Array< ModelExpenseConditionInput | null > | null,
   or?: Array< ModelExpenseConditionInput | null > | null,
   not?: ModelExpenseConditionInput | null,
@@ -58,7 +58,7 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type ModelIntInput = {
+export type ModelFloatInput = {
   ne?: number | null,
   eq?: number | null,
   le?: number | null,
@@ -85,7 +85,7 @@ export type ModelExpenseFilterInput = {
   id?: ModelIDInput | null,
   user?: ModelStringInput | null,
   type?: ModelStringInput | null,
-  amount?: ModelIntInput | null,
+  amount?: ModelFloatInput | null,
   and?: Array< ModelExpenseFilterInput | null > | null,
   or?: Array< ModelExpenseFilterInput | null > | null,
   not?: ModelExpenseFilterInput | null,

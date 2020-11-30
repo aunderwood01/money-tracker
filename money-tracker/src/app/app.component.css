@@ -2,8 +2,6 @@
   /*background-image: url("../background.png");
   background-size: cover;
   background-blend-mode: soft-light;*/
-  background-color: #E8E7E5;
-  background-size: cover;
 }
 
 .nav {
@@ -35,6 +33,7 @@
   outline: none;
 }
 
+/* Styles for adding expenses section */
 .add-expense {
   position: relative;
   top: 100px;
@@ -45,4 +44,20 @@
 .input.currency {
   text-align: right;
   padding-left: 15px;
+}
+
+/* Styles for the list of expenses table */
+.expenses-list {
+  position: relative;
+  top: 15%;
+  left: 33%;
+}
+
+/* Styles for the pie chart */
+.pie-chart {
+  position: relative;
+  left: 66%;
+  top: 5%;
+  width: 500px;
+  height: 500px;
 }
