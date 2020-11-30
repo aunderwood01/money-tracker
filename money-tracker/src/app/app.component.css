@@ -1,0 +1,48 @@
+.App {
+  /*background-image: url("../background.png");
+  background-size: cover;
+  background-blend-mode: soft-light;*/
+  background-color: #E8E7E5;
+  background-size: cover;
+}
+
+.nav {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  background-color: #68d627;
+  overflow: hidden;
+  display: inline-block;
+  font-size: 30px;
+}
+/* Centering the title of the page */
+.nav-centered {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-right {
+  float: right;
+  right: 20%;
+}
+.btn-sign-out {
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  outline: none;
+}
+
+.add-expense {
+  position: relative;
+  top: 100px;
+}
+.expense-title {
+  font-size: 20px;
+}
+.input.currency {
+  text-align: right;
+  padding-left: 15px;
+}

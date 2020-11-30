@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <amplify-authenticator *ngIf="authState !== 'signedin'">
   <amplify-sign-up
     slot="sign-up"
@@ -6,7 +7,30 @@
 </amplify-authenticator>
 
 <div *ngIf="authState === 'signedin' && user" class="App">
-  <div>Hello, {{user.username}}</div>
-  <amplify-sign-out></amplify-sign-out>
-  <!-- This is where you application template code goes -->
+  <div class="nav">
+    <div class="nav-centered">
+      <strong>{{user.username}}'s Expenses</strong>
+    </div>
+    <a href="mailto:agugold3@gmail.com?subject = MoneyTracker Issue">Report an Issue</a>
+    <div class="nav-right">
+      <button class="btn btn-primary btn-sign-out" (click)="signOut()">Sign Out <i class="ion-log-in" data-pack="default" data-tags="sign in"></i></button>
+    </div>
+
+  </div>
+
+  <div class="add-expense">
+    <strong class="expense-title">Add an Expense:</strong><br><br>
+    <label for="expenseAmt">Amount: </label><br><br>
+    $ <input type="number" id="expenseAmt" class="currency" min="0.01" step="0.01"><br><br>
+    <label for="type">Type: </label>
+    <select name="type" id="type">
+      <option value="bills">Bills</option>
+      <option value="groceries">Groceries</option>
+      <option value="fastFood">Fast Food</option>
+      <option value="car">Car</option>
+      <option value="other">Other</option>
+    </select><br><br>
+    <button class="btn btn-primary" (click)="addExpense()">Add Expense</button>
+  </div>
+
 </div>
