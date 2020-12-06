@@ -13,9 +13,9 @@
     <div class="nav-centered">
       <strong>{{user.username}}'s Expenses</strong>
     </div>
-    <a mat-button class="nav-button" href="mailto:agugold3@gmail.com?subject=MoneyTracker Issue">Report an Issue</a>
+    <a class="nav-button" href="mailto:agugold3@gmail.com?subject=MoneyTracker Issue">Report an Issue</a>
     <div class="nav-right">
-      <button mat-button class="btn btn-primary nav-button" (click)="signOut()">Sign Out <i class="ion-log-in" data-pack="default" data-tags="sign in"></i></button>
+      <button class="btn btn-primary nav-button btn-sign-out" (click)="signOut()">Sign Out <i class="ion-log-in" data-pack="default" data-tags="sign in"></i></button>
     </div>
 
   </div>
@@ -81,7 +81,7 @@
       <option value="Car">Car</option>
       <option value="Other">Other</option>
     </select><br><br>
-    <button mat-raised-button class="btn btn-primary" (click)="addExpense()">Add Expense</button>
+    <button class="btn btn-primary" (click)="addExpense()">Add Expense</button>
   </div>
   <br>
 
