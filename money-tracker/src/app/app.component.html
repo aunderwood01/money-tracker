@@ -13,14 +13,62 @@
     <div class="nav-centered">
       <strong>{{user.username}}'s Expenses</strong>
     </div>
-    <a href="mailto:agugold3@gmail.com?subject=MoneyTracker Issue">Report an Issue</a>
+    <a mat-button class="nav-button" href="mailto:agugold3@gmail.com?subject=MoneyTracker Issue">Report an Issue</a>
     <div class="nav-right">
-      <button class="btn btn-primary btn-sign-out" (click)="signOut()">Sign Out <i class="ion-log-in" data-pack="default" data-tags="sign in"></i></button>
+      <button mat-button class="btn btn-primary nav-button" (click)="signOut()">Sign Out <i class="ion-log-in" data-pack="default" data-tags="sign in"></i></button>
     </div>
 
   </div>
 
   <!-- Elements to add an expense -->
+  <!-- Trying to add a card for the add expense section
+    <mat-card>
+      <mat-card-title>Add an Expense</mat-card-title>
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Amount</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Type</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let type of types" [value]="type.value">
+              {{type.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
+        <button mat-raised-button color="primary">Add Expense</button>
+      </mat-card-content>
+    </mat-card>
+  <mat-divider></mat-divider><br>
+  -->
+
+  <!-- Trying to add a card for the list of expenses
+  <mat-card>
+    <mat-card-title>List of Expenses</mat-card-title>
+    <mat-card-content>
+      <table mat-table [dataSource]="expenses" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef> Amount </th>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef> Type </th>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+        </ng-container>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  -->
+
   <div class="add-expense">
     <strong class="expense-title">Add an Expense:</strong><br><br>
     <label for="expenseAmt">Amount: </label><br><br>
@@ -33,8 +81,9 @@
       <option value="Car">Car</option>
       <option value="Other">Other</option>
     </select><br><br>
-    <button class="btn btn-primary" (click)="addExpense()">Add Expense</button>
+    <button mat-raised-button class="btn btn-primary" (click)="addExpense()">Add Expense</button>
   </div>
+  <br>
 
   <!-- Table to list expenses -->
   <div class="expenses-list" id="expense-table" [ngClass]="updateData()"></div>

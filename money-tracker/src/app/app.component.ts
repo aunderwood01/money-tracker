@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import {Component, ChangeDetectorRef, NgModule} from '@angular/core';
 import {onAuthUIStateChange, CognitoUserInterface, AuthState, FormFieldTypes } from '@aws-amplify/ui-components';
 import Amplify, { API, graphqlOperation, Auth } from 'aws-amplify';
 import * as mutations from '../graphql/mutations';
@@ -22,6 +22,17 @@ export type GetExpensesQuery = {
   }
 }
 
+interface Type {
+  value: string;
+  viewValue: string
+}
+
+interface Expense {
+  amount: number;
+  type: string;
+  date: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,6 +44,14 @@ export class AppComponent {
   user: CognitoUserInterface | undefined;
   authState: AuthState;
   formFields: FormFieldTypes;
+  types: Type[] = [
+    {value: 'Bills', viewValue: 'Bills'},
+    {value: 'Groceries', viewValue: 'Groceries'},
+    {value: 'Fast Food', viewValue: 'Fast Food'},
+    {value: 'Car', viewValue: 'Car'},
+    {value: 'Other', viewValue: 'Other'}
+  ];
+  expenses: Expense[] = [];
 
   constructor(private ref: ChangeDetectorRef) {
     this.formFields = [
